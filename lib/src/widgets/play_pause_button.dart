@@ -36,7 +36,7 @@ class _PlayPauseButtonState extends State<PlayPauseButton>
     _animController = AnimationController(
       vsync: this,
       value: 0,
-      duration: const Duration(milliseconds: 300),
+      duration: Duration(milliseconds: 300),
     );
   }
 
@@ -94,12 +94,11 @@ class _PlayPauseButtonState extends State<PlayPauseButton>
         ),
       );
     }
-    if (_controller.value.hasError) return const SizedBox();
     return widget.bufferIndicator ??
         Container(
           width: 70.0,
           height: 70.0,
-          child: const CircularProgressIndicator(
+          child: CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation(Colors.white),
           ),
         );

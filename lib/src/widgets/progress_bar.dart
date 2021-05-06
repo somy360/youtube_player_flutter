@@ -27,20 +27,6 @@ class ProgressBarColors {
     this.bufferedColor,
     this.handleColor,
   });
-
-  ///
-  ProgressBarColors copyWith({
-    Color backgroundColor,
-    Color playedColor,
-    Color bufferedColor,
-    Color handleColor,
-  }) =>
-      ProgressBarColors(
-        backgroundColor: backgroundColor ?? this.backgroundColor,
-        handleColor: handleColor ?? this.handleColor,
-        bufferedColor: bufferedColor ?? this.bufferedColor,
-        playedColor: playedColor ?? this.playedColor,
-      );
 }
 
 /// A widget to display video progress bar.
@@ -168,7 +154,7 @@ class _ProgressBarState extends State<ProgressBar> {
       onHorizontalDragCancel: _dragEndActions,
       child: Container(
         color: Colors.transparent,
-        constraints: const BoxConstraints.expand(height: 7.0 * 2),
+        constraints: BoxConstraints.expand(height: 7.0 * 2),
         child: CustomPaint(
           painter: _ProgressBarPainter(
             progressWidth: 2.0,

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 /// Meta data for Youtube Video.
 class YoutubeMetaData {
   /// Youtube video ID of the currently loaded video.
@@ -21,9 +23,9 @@ class YoutubeMetaData {
   });
 
   /// Creates [YoutubeMetaData] from raw json video data.
-  factory YoutubeMetaData.fromRawData(dynamic rawData) {
-    final data = rawData as Map<String, dynamic>;
-    final durationInMs = (((data['duration'] ?? 0) as double) * 1000).floor();
+  factory YoutubeMetaData.fromRawData(String rawData) {
+    Map<String, dynamic> data = jsonDecode(rawData);
+    var durationInMs = (((data['duration'] ?? 0) as double) * 1000).floor();
     return YoutubeMetaData(
       videoId: data['videoId'],
       title: data['title'],

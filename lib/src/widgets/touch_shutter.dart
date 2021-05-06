@@ -135,22 +135,21 @@ class _TouchShutterState extends State<TouchShutter> {
               }
             },
             child: AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
+              duration: Duration(milliseconds: 300),
               color: _controller.value.isControlsVisible
                   ? Colors.black.withAlpha(150)
                   : Colors.transparent,
               child: _dragging
                   ? Center(
                       child: Container(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(5.0)),
+                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
                           color: Colors.black.withAlpha(150),
                         ),
                         child: Text(
                           "$seekDuration ($seekPosition)",
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 26.0,
                             fontWeight: FontWeight.w400,
                             color: Colors.white,
